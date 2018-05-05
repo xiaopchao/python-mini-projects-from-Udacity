@@ -1,0 +1,18 @@
+import urllib # urllib is an useful module to manage urls
+
+# Use a website to help us check curse words.
+def txt_check(text):
+    connection = urllib.urlopen("http://www.wdylike.appspot.com/?q=shot"+text) # open a url and create an "instance" connection
+    output = connection.read()
+    print output
+    connection.close()
+
+# read in your text, return the check result.
+def read_doc():
+    file = open("/Users/chao/Desktop/test.txt")
+    content = file.read()
+    print content
+    txt_check(content)
+    file.close()
+
+read_doc()
