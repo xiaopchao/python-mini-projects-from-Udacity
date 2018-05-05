@@ -1,0 +1,47 @@
+### Here is the file defining the class. this file name is "Udacity_media.py"
+
+import webbrowser
+class Movie():
+    """ This class is used for creating website of your favorate movies.""" # this is the __doc__ documentation
+    RATINGS = ["G","PG","PG-13","R"] # this is the class variables
+    def __init__(self,movie_title,movie_storyline,poster_image,trailer_youtube): # this __init__ is the basic function in a class, self refers to the instance you created
+        self.title = movie_title
+        self.storyline = movie_storyline
+        self.poster_image_url = poster_image
+        self.trailer_youtube_url = trailer_youtube
+        
+    def show_trailer(self):
+        webbrowser.open(self.trailer_youtube)
+
+### Here is the file creating the website including your favorate movies.
+import fresh_tomatoes  #A module to create a website,download from [https://github.com/udacity/ud036_StarterCode/blob/master/fresh_tomatoes.py]
+import Udacity_media   #The previous file I created before.
+
+#create a instance by passing arguments.
+toy_story = Udacity_media.Movie("Toy Story",
+                        "A story of a boy and his toys that come to life",
+                        "http://upload.wikimedia.org/wikipedia/en/1/13/Toy_Story.jpg",
+                        "https://www.youtube.com/watch?v=KYz2wyBy3kc")
+print(toy_story.storyline)
+
+
+player_one = Udacity_media.Movie("player_one",
+                                 "A story about a brave boy",
+                                 "http://upload.wikimedia.org/wikipedia/en/1/13/Toy_Story.jpg",
+                                 "https://www.youtube.com/watch?v=cSp1dM2Vj48")
+                                 
+                                 
+Tom_Jerry = Udacity_media.Movie("Tom_Jerry",
+                                 "A story about a cute cat and mouse",
+                                 "http://upload.wikimedia.org/wikipedia/en/1/13/Toy_Story.jpg",
+                                 "https://www.youtube.com/watch?v=cqyziA30whE")
+           
+movies = [toy_story,player_one, Tom_Jerry]      # create a list as the argument towards fresh_tomatoes.open_movies_page           
+# fresh_tomatoes.open_movies_page(movies)
+
+print (Udacity_media.Movie.RATINGS) # RATINGS is the class variables
+print (Udacity_media.Movie.__doc__) # __doc__ & __name__ & __module__ is the pre-define variables, which means you can use it without defining it on purpose.
+print (Udacity_media.Movie.__name__)
+print (Udacity_media.Movie.__module__)
+
+
