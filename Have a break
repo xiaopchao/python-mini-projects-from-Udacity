@@ -1,0 +1,12 @@
+import webbrowser # which include the functions which can open a browser
+import time # which include the functions which can make your computer sleep
+
+break_times = 10 # How many times do you want to break 
+break_count = 0  # the counter
+
+print ("Now it is" + time.ctime()) # time.ctime() can return us the current system time
+
+while (break_count < break_times):
+    time.sleep(1200) # when run this program, it hold on for 5 seconds.
+    webbrowser.open("https://www.youtube.com/watch?v=s53PZzzhe4w&start_radio=1&list=RDs53PZzzhe4w") #Open a web browser for you 
+    break_count = break_count + 1
