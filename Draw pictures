@@ -1,0 +1,68 @@
+import turtle  # turtle is a popular module to draw pictures
+
+#### draw multiple squares ###
+
+def draw_art():
+# set canvas
+    window = turtle.Screen()
+    window.bgcolor("lightblue") # set background color
+    
+# set turtles
+    brad = turtle.Turtle() #Creat a instance with "Turtle" class, which,actually,call a initial function which can set a whole space for an instance.
+    brad.shape("square") #set the shape of instance,we could also set it as circles & arrows
+    brad.color("black") # set the color of this instance
+    brad.speed(20) # set the speed of it
+
+# draw multiple squares
+    for i in range(36):
+        for j in range(4):
+            brad.forward(100) # let brad move forward for 100 steps(we could use "brad.circle" to let it draw circle)
+            brad.right(90)   #let it turn right at 90 degree
+        brad.right(10)# After a square, turn right at 10 degree to draw another squares.
+        
+    window.exitonclick() #close the window
+    
+draw_art()
+
+### draw a flower ###
+
+# step1: draw a basic diamond
+
+# How to define angles of an object? 
+# Basically, it starts from heading right,
+# And then every time you let it turn, it will start from that angle(imagine as a line)
+# but finally when you come back the original point, it seems to head left.
+
+def draw_strange(turtles):
+    turtles.left(30)
+    turtles.forward(50)
+    turtles.right(60)
+    turtles.forward(50)
+    turtles.right(120)
+    turtles.forward(50)
+    turtles.right(60)
+    turtles.forward(50)
+    
+# step2: draw a big picture
+def draw_flower():
+    window =  turtle.Screen()
+    window.bgcolor("lightyellow")
+    
+    flow = turtle.Turtle()
+    flow.shape("turtle")
+    flow.color("blue")
+    flow.speed(20)
+    
+    
+    for i in range(36):
+        draw_strange(flow)
+        flow.right(160) 
+      
+    flow.right(90)
+    flow.forward(500)
+    #flow.right(90)  
+    window.exitonclick()
+        
+draw_flower()
+    
+    
